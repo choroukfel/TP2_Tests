@@ -17,7 +17,7 @@ public class Test2Couts {
                 .temperature(0.7)
                 .build();
 
-        String question = "Quelle est la capitale du Maroc ?";
+        String question = "Je dois partir dans 2 jours à Paris ; j'y resterai 3 jours. Est-ce que je dois mettre un parapluie dans mes valises ?";
         ChatResponse response = model.chat(
                 UserMessage.from(question)
         );
