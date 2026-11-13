@@ -67,7 +67,7 @@ public class Test5Rag1 {
                         .build();
 
         // Phase 2 : question au LLM
-        String question = "Comment s'appelle le chat de Pierre ?";
+        String question = "Quelle est la capitale de la France ?";
 
         String reponse = assistant.chat(question);
 

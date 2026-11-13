@@ -71,31 +71,31 @@ public class Test6Rag2 {
 
         // Phase 2 : question au LLM
 
-// Conversation avec l'assistant
-        Scanner scanner = new Scanner(System.in);
-
+        // Conversation avec l'assistant
         System.out.println("=== Assistant RAG avec ml.pdf ===");
         System.out.println("Posez vos questions sur le cours.");
-        System.out.println("Tapez 'quit' pour terminer.");
+        System.out.println("Tapez 'fin' pour terminer.");
 
-        while (true) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            while (true) {
+                System.out.println("==================================================");
+                System.out.println("Posez votre question : ");
+                String question = scanner.nextLine();
 
-            System.out.print("\nVotre question : ");
-            String question = scanner.nextLine();
+                if (question.isBlank()) {
+                    continue;
+                }
 
-            if (question.equalsIgnoreCase("quit")) {
-                System.out.println("Fin de la conversation.");
-                break;
+                System.out.println("==================================================");
+
+                if ("fin".equalsIgnoreCase(question)) {
+                    break;
+                }
+
+                String reponse = assistant.chat(question);
+                System.out.println("Assistant : " + reponse);
+                System.out.println("==================================================");
             }
-
-            if (question.isBlank()) {
-                continue;
-            }
-
-            String reponse = assistant.chat(question);
-
-            System.out.println("\nRéponse : " + reponse);
         }
-
     }
 }

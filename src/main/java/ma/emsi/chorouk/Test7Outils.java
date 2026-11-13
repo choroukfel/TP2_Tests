@@ -39,15 +39,14 @@ public class Test7Outils {
 
         System.out.println("=== Assistant météo avec LangChain4j ===");
         System.out.println("Posez vos questions.");
-        System.out.println("Tapez 'quit' pour terminer.");
+        System.out.println("Tapez 'FIN' pour terminer.");
 
         while (true) {
 
             System.out.print("\nVotre question : ");
             String question = scanner.nextLine();
 
-            if (question.equalsIgnoreCase("quit")) {
-                System.out.println("Fin de la conversation.");
+            if ("fin".equalsIgnoreCase(question)) {
                 break;
             }
 
